@@ -1,8 +1,11 @@
 {
   "name": "overpurlple.io",
   "private": true,
-  "description": "A starter for a blog powered by Gatsby and Markdown",
+  "description": "Overpurlple",
   "version": "0.1.0",
+  "engines": {
+    "node": ">=18"
+  },
   "author": "lovex <l2276227464@163.com>",
   "bugs": {
     "url": "https://github.com/lovexueorangecat/overpurple.io/issues"
@@ -26,12 +29,16 @@
     "react-dom": "^18.1.0"
   },
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.54.1",
+    "@typescript-eslint/parser": "^5.54.1",
+    "import": "^0.0.6",
     "prettier": "^2.8.4",
     "typescript": "^4.9.5"
   },
   "homepage": "https://github.com/lovexueorangecat/overpurple.io#readme",
   "keywords": [
-    "gatsby"
+    "react",
+    "overpurple"
   ],
   "license": "0BSD",
   "repository": {
