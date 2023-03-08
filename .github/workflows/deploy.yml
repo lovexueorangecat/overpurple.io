@@ -26,7 +26,11 @@ jobs:
      with: 
       node-version: '18.x'
      // 运行 安装和打包任务
-    run: npm install && npm run now-build
+    run: yarn && yarn now-build
+  - name: set git config
+    run: |
+      git config user.name "lovex"
+      git config user.email "l2276227464@163.com"
 
     # 部署到 GitHub pages
     # 命名这个任务为发布Deploy
