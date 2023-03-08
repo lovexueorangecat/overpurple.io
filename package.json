@@ -50,8 +50,8 @@
   "scripts": {
     "prepare": "husky install",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
-    "dev": "gatsby develop",
-    "develop": "gatsby develop",
+    "dev": "yarn prepare && gatsby develop",
+    "develop": "yarn prepare && gatsby develop",
     "start": "yarn dev",
     "build": "tsc && rm -rf public && rm -rf .cache && gatsby build",
     "now-build": "gatsby build",

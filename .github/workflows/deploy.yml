@@ -1,0 +1,44 @@
+# 建立一个名为deploy的工作流
+name: deploy
+
+# 监听 master上的push事件
+on:
+  push:
+    branches: [master] # master 分支有 push 时触发
+    paths-ignore:  # 下列文件的变更不触发部署，可自行添加
+      - README.md
+    
+# 开始任务
+jobs:
+ # 建立一个名为 deploy 的job
+  deploy:
+    # 在最新的乌班图环境进行工作
+    runs-on: ubuntu-latest
+
+    # 开始设置构建步骤
+   steps:
+  # 这是github官方的一个action，用于clone该仓库的源码到工作流中，
+   - uses: actions/checkout@v3
+
+  # 命名这个步骤为构建Build
+   - name: Build
+     uses: actions/setup-node@master
+     with: 
+      node-version: '18.x'
+     // 运行 安装和打包任务
+    run: npm install && npm run build
+
+    # 部署到 GitHub pages
+    # 命名这个任务为发布Deploy
+   - name: Deploy
+     # 因为构建之后，需要把代码上传到服务器上，所以需要连接到ssh，并且做一个拷贝操作
+    uses: peaceiris/actions-gh-pages@v3
+    # env:
+    # WELCOME: "ssh scp ssh pipelines"
+    # LASTSSH: "Doing something after copying"
+    with:
+      publish_dir: ./build # 部署打包后的 build 目录
+      github_token: ${{ secrets.OVERPURPLE }} # secret 名
+      user_name: ${{ secrets.USER_NAME }}
+      user_email: ${{ secrets.USER_EMAIL }}
+      commit_message: 自动部署 # 部署时的 git 提交信息，自由填写
