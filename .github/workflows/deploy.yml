@@ -26,7 +26,7 @@ jobs:
      with: 
       node-version: '18.x'
      // 运行 安装和打包任务
-    run: npm install && npm run build
+    run: npm install && npm run now-build
 
     # 部署到 GitHub pages
     # 命名这个任务为发布Deploy
