@@ -8,6 +8,7 @@
  * @type {import('gatsby').GatsbyConfig}
  */
 module.exports = {
+  pathPrefix: '/overpurple.io',
   siteMetadata: {
     title: `Gatsby Starter Blog`,
     author: {
@@ -82,7 +83,7 @@ module.exports = {
                   date: node.frontmatter.date,
                   url: site.siteMetadata.siteUrl + node.fields.slug,
                   guid: site.siteMetadata.siteUrl + node.fields.slug,
-                  custom_elements: [{ "content:encoded": node.html }],
+                  custom_elements: [{ 'content:encoded': node.html }],
                 })
               })
             },
@@ -101,8 +102,8 @@ module.exports = {
                 }
               }
             }`,
-            output: "/rss.xml",
-            title: "Gatsby Starter Blog RSS Feed",
+            output: '/rss.xml',
+            title: 'Gatsby Starter Blog RSS Feed',
           },
         ],
       },
