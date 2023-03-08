@@ -5,7 +5,12 @@ import Bio from "../components/bio"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
-const BlogIndex = ({ data, location }) => {
+interface BlogIndexProps {
+  data: any
+  location: any
+}
+
+const BlogIndex = ({ data, location }: BlogIndexProps) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const posts = data.allMarkdownRemark.nodes
 
@@ -26,7 +31,7 @@ const BlogIndex = ({ data, location }) => {
     <Layout location={location} title={siteTitle}>
       <Bio />
       <ol style={{ listStyle: `none` }}>
-        {posts.map(post => {
+        {posts.map((post: any) => {
           const title = post.frontmatter.title || post.fields.slug
 
           return (
