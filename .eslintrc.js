@@ -6,8 +6,8 @@ module.exports = {
   },
   parser: `@typescript-eslint/parser`, // 将解析器从`babel-eslint`替换成`@typescript-eslint/parser`,用以解析 TS 代码
   parserOptions: {
-    sourceType: "module",
-    ecmaVersion: "latest",
+    sourceType: 'module',
+    ecmaVersion: 'latest',
     ecmaFeatures: {
       experimentalObjectRestSpread: true,
       jsx: true,
@@ -30,30 +30,30 @@ module.exports = {
   },
   rules: {
     // import
-    "import/order": [
-      "error",
+    'import/order': [
+      'error',
       {
         pathGroups: [
           {
-            pattern: "react",
-            group: "external",
-            position: "before",
+            pattern: 'react',
+            group: 'external',
+            position: 'before',
           },
           {
-            pattern: "@/**",
-            group: "external",
-            position: "after",
+            pattern: '@/**',
+            group: 'external',
+            position: 'after',
           },
         ],
-        pathGroupsExcludedImportTypes: ["react"],
+        pathGroupsExcludedImportTypes: ['react'],
       },
     ],
-    "import/first": "error",
-    "import/no-mutable-exports": "error",
+    'import/first': 'error',
+    'import/no-mutable-exports': 'error',
 
     // react
-    "react/prop-types": "off",
-    "@typescript-eslint/no-explicit-any": "off",
-    "react/no-unescaped-entities": "off",
+    'react/prop-types': 'off',
+    '@typescript-eslint/no-explicit-any': 'off',
+    'react/no-unescaped-entities': 'off',
   },
 }
