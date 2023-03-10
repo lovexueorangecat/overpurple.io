@@ -4,16 +4,18 @@
  * See: https://www.gatsbyjs.com/docs/reference/config-files/gatsby-node/
  */
 
-import { resolve } from 'path'
-import { createFilePath } from 'gatsby-source-filesystem'
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const path = require(`path`)
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const { createFilePath } = require(`gatsby-source-filesystem`)
 
 // Define the template for blog post
-const blogPost = resolve(`./src/templates/blog-post.js`)
+const blogPost = path.resolve(`./src/templates/blog-post.js`)
 
 /**
  * @type {import('gatsby').GatsbyNode['createPages']}
  */
-export async function createPages({ graphql, actions, reporter }) {
+exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions
 
   // Get all markdown blog posts sorted by date
@@ -65,7 +67,7 @@ export async function createPages({ graphql, actions, reporter }) {
 /**
  * @type {import('gatsby').GatsbyNode['onCreateNode']}
  */
-export function onCreateNode({ node, actions, getNode }) {
+exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions
 
   if (node.internal.type === `MarkdownRemark`) {
@@ -82,7 +84,7 @@ export function onCreateNode({ node, actions, getNode }) {
 /**
  * @type {import('gatsby').GatsbyNode['createSchemaCustomization']}
  */
-export function createSchemaCustomization({ actions }) {
+exports.createSchemaCustomization = ({ actions }) => {
   const { createTypes } = actions
 
   // Explicitly define the siteMetadata {} object
