@@ -2,7 +2,7 @@
 {
   "compilerOptions": {
     "target": "esnext", // 编译生成的目标 es 版本,可以根据需要设置
-    "module": "esnext", // 编译生成的目标模块系统
+    "module": "CommonJS", // 编译生成的目标模块系统
     "lib": ["dom", "es2015", "es2017"], // 配置需要包含的运行环境的类型定义
     "jsx": "react", // 配置 .tsx 文件的输出模式
     "strict": true, // 开启严格模式
