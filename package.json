@@ -58,7 +58,7 @@
     "dev": "gatsby develop",
     "develop": "yarn prepare && gatsby develop",
     "start": "yarn dev",
-    "build": "tsc && gatsby build",
+    "build": "tsc && rm -rf public && rm -rf .cache && gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
