@@ -20,5 +20,4 @@ jobs:
         access-token: ${{ secrets.OVERPURPLE }}
         deploy-branch: gh-pages
         gatsby-args: --prefix-paths
-        develop-repo: overpurple.io
         

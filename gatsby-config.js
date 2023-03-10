@@ -10,16 +10,13 @@
 module.exports = {
   pathPrefix: '/overpurple.io',
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
+    title: `Overpurple`,
     author: {
-      name: `Kyle Mathews`,
-      summary: `who lives and works in San Francisco building useful things.`,
+      name: `lovex`,
+      summary: `who lives and works in China building useful things.`,
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
-    social: {
-      twitter: `kylemathews`,
-    },
+    description: `Overpurple.io`,
+    siteUrl: `https://lovexueorangecat.github.io/overpurple.io/`,
   },
   plugins: [
     `gatsby-plugin-image`,
