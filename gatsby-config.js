@@ -10,7 +10,7 @@
 module.exports = {
   pathPrefix: '/overpurple.io',
   siteMetadata: {
-    title: `Overpurple`,
+    title: `Overpurple.io`,
     author: {
       name: `lovex`,
       summary: `who lives and works in China building useful things.`,
