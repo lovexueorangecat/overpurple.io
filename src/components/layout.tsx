@@ -7,7 +7,7 @@ interface LayoutProps {
   children?: React.ReactNode
 }
 
-const Layout = ({ location, title, children }: LayoutProps) => {
+const Layout: React.FC<LayoutProps> = ({ location, title, children }) => {
   const rootPath = `/`
   const isRootPath = location.pathname === rootPath
   let header

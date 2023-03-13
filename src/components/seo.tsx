@@ -14,7 +14,7 @@ interface SeoProps {
   children?: React.ReactNode
 }
 
-const Seo = ({ description, title, children }: SeoProps) => {
+const Seo: React.FC<SeoProps> = ({ description, title, children }) => {
   const { site } = useStaticQuery(
     graphql`
       query {
