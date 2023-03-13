@@ -8,7 +8,7 @@ interface LayoutProps {
 }
 
 const Layout: React.FC<LayoutProps> = ({ location, title, children }) => {
-  const rootPath = `/`
+  const rootPath = `/overpurple.io/`
   const isRootPath = location.pathname === rootPath
   const header = isRootPath ? (
     <div className="flex items-center justify-between">
