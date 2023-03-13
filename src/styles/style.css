@@ -1,3 +1,8 @@
+/* tailwindcss global css import*/
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /* CSS Custom Properties Definitions */
 
 :root {
@@ -58,6 +63,7 @@
   --color-heading: #1a202c;
   --color-heading-black: black;
   --color-accent: #d1dce5;
+  --color-purple: #714288;
 }
 
 /* HTML elements */
@@ -199,7 +205,7 @@ blockquote {
   margin-left: calc(-1 * var(--spacing-6));
   margin-right: var(--spacing-8);
   padding: var(--spacing-0) var(--spacing-0) var(--spacing-0) var(--spacing-6);
-  border-left: var(--spacing-1) solid var(--color-primary);
+  border-left: var(--spacing-1) solid var(--color-purple);
   font-size: var(--fontSize-2);
   font-style: italic;
   margin-bottom: var(--spacing-8);
@@ -228,7 +234,7 @@ table thead tr th {
 /* Link */
 
 a {
-  color: var(--color-primary);
+  color: var(--color-purple);
 }
 
 a:hover,
@@ -253,7 +259,7 @@ a:focus {
 }
 
 .main-heading {
-  font-size: var(--fontSize-7);
+  font-size: var(--fontSize-5);
   margin: 0;
 }
 
@@ -268,7 +274,7 @@ a:focus {
 
 .post-list-item h2 {
   font-size: var(--fontSize-4);
-  color: var(--color-primary);
+  color: var(--color-purple);
   margin-bottom: var(--spacing-2);
   margin-top: var(--spacing-0);
 }
@@ -281,7 +287,7 @@ a:focus {
   font-weight: var(--fontWeight-bold);
   font-family: var(--font-heading);
   text-decoration: none;
-  font-size: var(--fontSize-2);
+  font-size: var(--fontSize-0);
 }
 
 .bio {
@@ -329,3 +335,14 @@ a:focus {
     list-style-position: inside;
   }
 }
+
+/* switch style */
+
+.switch-input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  width: 0;
+  height: 0;
+}
+

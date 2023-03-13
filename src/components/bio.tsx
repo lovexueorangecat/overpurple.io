@@ -10,23 +10,7 @@ import { useStaticQuery, graphql } from 'gatsby'
 import { StaticImage } from 'gatsby-plugin-image'
 
 const Bio = () => {
-  const data = useStaticQuery(graphql`
-    query BioQuery {
-      site {
-        siteMetadata {
-          author {
-            name
-            summary
-          }
-          social {
-            twitter
-          }
-          siteUrl
-        }
-      }
-    }
-  `)
-
+  const data = useStaticQuery(pageQuery)
   // Set these values by editing "siteMetadata" in gatsby-config.js
   const author = data.site.siteMetadata?.author
   // const social = data.site.siteMetadata?.social
@@ -37,7 +21,7 @@ const Bio = () => {
         className="bio-avatar"
         layout="fixed"
         formats={['auto', 'webp', 'avif']}
-        src="../images/profile-pic.jpeg"
+        src="../images/icon.jpeg"
         width={50}
         height={50}
         quality={95}
@@ -62,5 +46,22 @@ const Bio = () => {
     </div>
   )
 }
+
+export const pageQuery = graphql`
+  query BioQuery {
+    site {
+      siteMetadata {
+        author {
+          name
+          summary
+        }
+        social {
+          twitter
+        }
+        siteUrl
+      }
+    }
+  }
+`
 
 export default Bio
