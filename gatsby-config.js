@@ -13,7 +13,7 @@ module.exports = {
     title: `Overpurple`,
     author: {
       name: `lovex`,
-      summary: `Personal blog by lovex. I record growth with code`,
+      summary: `I record growth with code`,
     },
     description: `Overpurple.io`,
     siteUrl: `https://lovexueorangecat.github.io/overpurple.io/`,
