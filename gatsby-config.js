@@ -120,5 +120,7 @@ module.exports = {
         icon: `src/images/icon.jpeg`, // This path is relative to the root of the site.
       },
     },
+    `gatsby-plugin-use-dark-mode`,
+    `gatsby-plugin-material-ui`,
   ],
 }

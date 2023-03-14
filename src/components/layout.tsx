@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { Link } from 'gatsby'
+import { ToggleSwitchButton } from './SwitchButton'
 
 interface LayoutProps {
   location?: any
@@ -7,25 +8,35 @@ interface LayoutProps {
   children?: React.ReactNode
 }
 
-const Layout: React.FC<LayoutProps> = ({ location, title, children }) => {
-  const rootPath = `/overpurple.io/`
-  const isRootPath = location.pathname === rootPath
-  const header = isRootPath ? (
+export const HomeHeader: React.FC<{ title?: string }> = ({ title }) => {
+  return (
     <div className="flex items-center justify-between">
       <h1 className="main-heading">
         <Link to="/">{title}</Link>
       </h1>
-      <label>
-        <input className="switch-input" type="checkbox" />
-      </label>
+      <ToggleSwitchButton id="theme-switch" />
     </div>
-  ) : (
-    <>
+  )
+}
+
+export const OtherPageHeader: React.FC<{ title?: string }> = ({ title }) => {
+  return (
+    <div className="flex items-center justify-between">
       <Link className="header-link-home" to="/">
         {title}
       </Link>
-      <>开关</>
-    </>
+      <ToggleSwitchButton id="theme-switch" />
+    </div>
+  )
+}
+
+const Layout: React.FC<LayoutProps> = ({ location, title, children }) => {
+  const rootPath = `/overpurple.io/`
+  const isRootPath = location.pathname === rootPath
+  const header = isRootPath ? (
+    <HomeHeader title={title} />
+  ) : (
+    <OtherPageHeader title={title} />
   )
 
   return (
